@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Book an Appointment | Green Professionals Salon & Academy</title>
+    <meta name="description" content="Book your next beauty appointment at Green Professionals Salon & Academy in Sonipat. Choose your service, date, and time for hair, skin, makeup, and academy courses." />
+    <meta name="keywords" content="Book Salon Appointment, Salon Booking Sonipat, Hair Appointment, Skin Care Booking, Makeup Appointment, Beauty Academy Booking, Green Professionals Appointment" />
+    <meta name="author" content="Green Professionals Salon & Academy" />
+    <link rel="canonical" href="https://www.greenprofessionalssalon.com/appointment.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.greenprofessionalssalon.com/appointment.html" />
+    <meta property="og:title" content="Book an Appointment | Green Professionals Salon & Academy" />
+    <meta property="og:description" content="Book your next beauty appointment at Green Professionals Salon & Academy in Sonipat. Choose your service, date, and time for hair, skin, makeup, and academy courses." />
+    <meta property="og:image" content="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1260" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.greenprofessionalssalon.com/appointment.html" />
+    <meta property="twitter:title" content="Book an Appointment | Green Professionals Salon & Academy" />
+    <meta property="twitter:description" content="Book your next beauty appointment at Green Professionals Salon & Academy in Sonipat. Choose your service, date, and time for hair, skin, makeup, and academy courses." />
+    <meta property="twitter:image" content="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1260" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="appointment.css"> <!-- Appointment-specific styles -->
+  </head>
+  <body>
+    <div class="top-bar">
+      <p>WALK-INS WELCOME! CALL FOR APPOINTMENTS</p>
+    </div>
+
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+              <h1>Green<br><span>Professionals</span></h1>
+            </a>
+          </div>
+          
+        <nav class="nav">
+          <a href="index.html#home">HOME</a>
+          <a href="index.html#services">SERVICES</a>
+          <a href="index.html#gallery">GALLERY</a>
+          <a href="index.html#about">ABOUT</a>
+          <a href="index.html#contact">CONTACT</a>
+          <a href="appointment.html" class="btn btn-small phone-link">BOOK NOW</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle mobile menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#home">HOME</a>
+      <a href="index.html#services">SERVICES</a>
+      <a href="index.html#gallery">GALLERY</a>
+      <a href="index.html#about">ABOUT</a>
+      <a href="index.html#contact">CONTACT</a>
+      <a href="appointment.html" class="btn btn-small">BOOK NOW</a>
+    </div>
+
+    <section class="appointment-section section-padding">
+      <div class="container">
+        <div class="appointment-grid">
+          <div class="appointment-form-container" id="appointmentFormSection">
+            <h2 class="section-title-left">Schedule Your Visit</h2>
+            <p class="section-description">
+              Fill out the form below to book your preferred service, date, and time. We look forward to welcoming you!
+            </p>
+            <form id="appointmentForm" class="appointment-form">
+              <input type="text" placeholder="Your Name" required>
+              <input type="tel" placeholder="Phone Number" required pattern="[0-9]{10}" title="Please enter a 10-digit phone number">
+              <input type="email" placeholder="Email Address" required>
+              <select required>
+                <option value="">Select Service</option>
+                <option value="hair">Hair Styling</option>
+                <option value="color">Hair Coloring</option>
+                <option value="skin">Skin Care</option>
+                <option value="makeup">Makeup</option>
+                <option value="bridal">Bridal Package</option>
+                <option value="nails">Nail Art</option>
+                <option value="spa">Spa Services</option>
+                <option value="academy">Academy Courses</option>
+              </select>
+              <input type="date" id="appointmentDate" required>
+              <select id="appointmentTime" required>
+                <option value="">Select Time</option>
+                <option value="10:00">10:00 AM</option>
+                <option value="11:00">11:00 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="13:00">01:00 PM</option>
+                <option value="14:00">02:00 PM</option>
+                <option value="15:00">03:00 PM</option>
+                <option value="16:00">04:00 PM</option>
+                <option value="17:00">05:00 PM</option>
+                <option value="18:00">06:00 PM</option>
+                <option value="19:00">07:00 PM</option>
+              </select>
+              <textarea placeholder="Any special requests or notes?" rows="4"></textarea>
+              <div id="formMessage" class="form-message"></div>
+              <button type="submit" class="btn btn-primary">CONFIRM APPOINTMENT</button>
+            </form>
+          </div>
+
+          <!-- Updated Image Grid Section -->
+          <div class="appointment-images">
+            <h2 class="section-title-left">Where Reflection Meets Perfection</h2>
+            <p class="section-description">
+                From modern mirrors to artistic reflections — every design adds a touch of class to your salon.
+            </p>
+
+            <div class="image-grid">
+              <div class="image-row">
+                <img src="9.jpg" alt="Salon interior with facial treatment" loading="lazy">
+                <img src="4.jpg" alt="Hair styling in progress" loading="lazy">
+              </div>
+              <div class="image-row">
+                <img src="11.jpg" alt="Hair coloring station" loading="lazy">
+                <img src="7.jpg" alt="Makeup artist working" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h2>Green<br><span>Professionals</span></h2>
+            <p>Salon & Academy</p>
+          </div>
+          <div class="footer-text">
+            <p>&copy; 2025 Green Professionals Salon & Academy. All rights reserved.</p>
+            <p>Kachey Quarter, Ashok Nagar, Sonipat - 131001</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/appointment.js"></script>
+  </body>
+</html>

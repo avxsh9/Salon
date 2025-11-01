@@ -1,0 +1,183 @@
+/* Instagram Reels Section Styles */
+
+.instagram-section {
+    background-color: var(--background); /* Light off-white background */
+    text-align: center;
+}
+
+.instagram-reels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust minmax for vertical cards */
+    gap: 32px;
+    margin-top: 64px;
+    justify-content: center; /* Center items if they don't fill the grid */
+}
+
+.reel-card {
+    position: relative;
+    width: 100%;
+    padding-bottom: 177.77%; /* For 9:16 aspect ratio (16/9 * 100%) */
+    background-color: var(--surface);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.reel-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.instagram-reel-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is key for vertical cropping */
+    filter: brightness(0.9);
+}
+
+.reel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.reel-card:hover .reel-overlay {
+    opacity: 1;
+}
+
+.reel-overlay a {
+    color: var(--surface); /* White icon */
+    font-size: 48px;
+    transition: transform 0.3s ease;
+}
+
+.reel-overlay a:hover {
+    transform: scale(1.1);
+    color: var(--accent-color); /* Accent color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .instagram-reels-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 24px;
+    }
+    .reel-card {
+        padding-bottom: 177.77%; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    .instagram-reels-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+        gap: 20px;
+    }
+    .reel-card {
+        max-width: 300px; /* Limit width for single column */
+        margin: 0 auto; /* Center the card */
+    }
+    .reel-overlay a {
+        font-size: 40px;
+    }
+}
+
+
+.google-rating-line {
+    display: flex;
+    align-items: center; /* perfect vertical alignment */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 12px 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.1;
+  }
+  
+  .google-logo {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .g-blue { color: #4285F4; }
+  .g-red { color: #EA4335; }
+  .g-yellow { color: #FBBC05; }
+  .g-green { color: #34A853; }
+  
+  .stars {
+    font-size: 17px;
+    color: #1a73e8; /* Blue stars */
+    display: inline-flex;
+    align-items: center;
+    letter-spacing: 1px;
+    position: relative;
+    top: 1px; /* slight nudge for perfect alignment */
+  }
+  
+  /* Half star effect */
+  .stars .half {
+    position: relative;
+    display: inline-block;
+    color: #ccc; /* gray right half */
+    overflow: hidden;
+    width: 50%;
+  }
+  
+  .stars .half::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #1a73e8;
+  }
+  
+  .rating-text {
+    font-size: 15px;
+    color: #333;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+  }
+  
+  .rating-text b {
+    color: #000;
+    font-weight: 600;
+  }
+  
+  .rating-text a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .rating-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* 📱 Mobile Responsive */
+  @media (max-width: 600px) {
+    .google-rating-line {
+      flex-direction: column;
+      gap: 4px;
+    }
+    .rating-text {
+      font-size: 14px;
+    }
+  }
+  

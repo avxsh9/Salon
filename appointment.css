@@ -1,0 +1,314 @@
+/* ------------------------------
+   Appointment Page Styles
+------------------------------ */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Section Padding */
+  .section-padding {
+    padding: 80px 20px;
+  }
+  
+  /* Appointment Section */
+  .appointment-section {
+    background: #fff;
+    color: #333;
+    font-family: "Inter", sans-serif;
+  }
+  
+  /* Grid Layout */
+  .appointment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 50px;
+  }
+  
+  @media (max-width: 900px) {
+    .appointment-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+  
+  /* Form Container */
+  .appointment-form-container {
+    max-width: 550px;
+    margin: 0 auto;
+  }
+  
+  .section-title-left {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  .section-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.5;
+  }
+  
+  /* Appointment Form */
+  .appointment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .appointment-form input,
+  .appointment-form select,
+  .appointment-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+  }
+  
+  .appointment-form input:focus,
+  .appointment-form select:focus,
+  .appointment-form textarea:focus {
+    border-color: #0073e6;
+    outline: none;
+  }
+  
+  .appointment-form button {
+    background: #A2C4B2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .appointment-form button:hover {
+    background: #005bb5;
+  }
+  
+  /* Form Message */
+  .form-message {
+    font-size: 0.95rem;
+    color: green;
+    margin-top: 10px;
+  }
+  
+  /* ------------------------------
+     Image Grid Section
+  ------------------------------ */
+  
+  .appointment-images {
+    text-align: center;
+  }
+  
+  .appointment-images .section-title-left {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .appointment-images .section-description {
+    color: #666;
+    margin-bottom: 25px;
+  }
+  
+  /* 2x2 Clean Grid */
+  .image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .image-row img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-row img:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .image-row {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .image-row img {
+      max-width: 100%;
+    }
+  
+    .section-title-left {
+      text-align: center;
+    }
+  
+    .appointment-form-container {
+      text-align: center;
+    }
+  }
+  
+  /* ------------------------------
+     Minimal Google-style Rating Div
+  ------------------------------ */
+  
+  .rating-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 25px auto;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+  }
+  
+  .rating-div img {
+    height: 26px;
+    width: auto;
+  }
+  
+  .rating-div .stars {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+  }
+  
+  .rating-div .star {
+    color: #0073e6;
+    font-size: 18px;
+  }
+  
+  /* ------------------------------
+     Footer
+  ------------------------------ */
+  .footer {
+    background: #f8f8f8;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    color: #444;
+  }
+  
+  .footer-logo h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+  }
+  
+  .footer-logo span {
+    color: #666666;
+  }
+  
+  .footer p {
+    font-size: 0.95rem;
+    margin-top: 6px;
+  }
+  
+  /* ------------------------------
+     Utility Classes
+  ------------------------------ */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #A2C4B2;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background: #A2C4B2;
+  }
+  
+  /* ------------------------------
+   Image Grid Section
+------------------------------ */
+
+.appointment-images {
+    text-align: center;
+  }
+  
+  .image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .image-row img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-row img:hover {
+    transform: scale(1.03);
+  }
+  
+  /* ✅ Mobile par bhi 2x2 layout maintain karega */
+  @media (max-width: 768px) {
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      justify-items: center;
+    }
+  
+    .image-row {
+      display: contents;
+    }
+  
+    .image-row img {
+      max-width: 100%;
+      width: 90%;
+    }
+  
+    .section-title-left {
+      text-align: center;
+    }
+  
+    .appointment-form-container {
+      text-align: center;
+    }
+  }
+  
