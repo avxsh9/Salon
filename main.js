@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
        Default: 0.75 (change below or call setPlaybackRate(n) at runtime).
     */
     (function setupVideoSpeed() {
-        let playbackRate = 0.15; // <-- change this value to slow/faster (1.0 = normal)
+        let playbackRate = 0.75; // <-- change this value to slow/faster (1.0 = normal)
 
         // helper to apply rate to matching videos
         function applyRate(rate) {
