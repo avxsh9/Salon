@@ -954,14 +954,11 @@ img {
       display: block;
     }
   
-    /* optional small overlay/icon placement */
     .reel-overlay { position: absolute; inset: 8px; display:flex; justify-content:flex-end; align-items:flex-start; z-index:2; pointer-events:none; }
     .reel-overlay a { pointer-events:auto; } /* keep link clickable */
   
-    /* hide carousel-specific dots/track transforms on mobile (if any) */
     .instagram-reels-track { transform: none !important; transition: none !important; }
   
-    /* keep page from having unexpected horizontal scroll */
     html, body { overflow-x: hidden; }
   }
   
