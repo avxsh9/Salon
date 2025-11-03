@@ -82,13 +82,15 @@ img {
 .header {
     background-color: var(--surface); /* White header */
     padding: 16px 0; /* 2 * 8 = 16px */
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
+    left: 0;
     z-index: 1000;
     box-shadow: var(--shadow-light); /* Softer shadow */
     border-bottom: 1px solid var(--border);
 }
-  
+
 .header .container {
     display: flex;
     justify-content: space-between;
