@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridal Packages & Pricing - Green Professionals Salon & Academy</title>
+    <link rel="stylesheet" href="style.css"> <!-- Global styles -->
+    <link rel="stylesheet" href="packages.css"> <!-- Page-specific styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Book Your Session</h2>
+            <form id="appointmentForm">
+
+                <div class="form-group">
+                    <label for="serviceName">Selected Package/Service:</label>
+                    <input type="text" id="serviceName" name="serviceName" readonly required>
+                </div>
+
+                <div class="form-group">
+                    <label for="clientName">Your Full Name:</label>
+                    <input type="text" id="clientName" name="clientName" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="e.g., 9876543210" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="priceSelect">Total Price:</label>
+                    <select id="priceSelect" name="priceSelect" required>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                    <small>Package price is automatically selected.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentDate">Appointment Date:</label>
+                    <input type="date" id="appointmentDate" name="appointmentDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointmentTime">Preferred Time (9 AM - 8 PM):</label>
+                    <select id="appointmentTime" name="appointmentTime" required>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">CONFIRM APPOINTMENT</button>
+            </form>
+            <p id="submissionMessage" class="submission-success" style="display:none;">
+                ✅ Thank you! Your appointment request has been sent successfully. We will call to confirm shortly.
+            </p>
+        </div>
+    </div>
+
+    <!-- Global Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <h1>Green<br><span>Professionals</span></h1>
+                </a>
+            </div>
+            <nav class="nav" id="mainNav">
+                <a href="index.html#home">HOME</a>
+                <a href="index.html#services">SERVICES</a>
+                <a href="index.html#gallery">GALLERY</a>
+                <a href="#pricing" class="active-link">PRICING</a>
+                <a href="index.html#contact">CONTACT</a>
+                <a href="appointment.html" class="btn btn-small btn-primary-a book-now-btn" data-package="Consultation Booking" data-price="0">BOOK NOW</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Pricing Section -->
+    <section class="pricing section-padding" id="pricing">
+        <div class="container">
+            <h1 class="page-header-title reveal-item">Detailed Pre-Bridal Packages & H.D. Makeup Pricing</h1>
+            <p class="section-subtitle reveal-item">Choose the perfect start to your beautiful journey.</p>
+            <br>
+
+            <div class="package-grid">
+
+                <div class="package-card reveal-item">
+                    <div class="package-header">
+                        <h3>PRE-BRIDAL PACKAGE (₹10000)</h3>
+                    </div>
+                    <div class="package-details">
+                        <ul class="package-list">
+                            <li data-price="1500">1st Sitting before Prebridal</li>
+                            <li data-price="3000">O3+ Bleach Facial</li>
+                            <li data-price="2000">Full Body Bleach</li>
+                            <li data-price="1800">Full Body Wax (Chocolate)</li>
+                            <li data-price="1000">B. Wax</li>
+                            <li data-price="500">Pedicure</li>
+                            <li data-price="500">Manicure</li>
+                            <li data-price="1000">Hair Spa</li>
+                            <li data-price="500">Hair Cut + Threading + Face wax</li>
+                        </ul>
+                    </div>
+                    <div class="package-summary">
+                        <p class="summary-line">Total Value: <span class="value">₹11800/-</span></p>
+                        <p class="summary-line discount">Less 15%: <span class="value">₹1800/-</span></p>
+                    </div>
+                    <div class="package-footer">
+                        <span class="final-price">₹10,000/-</span>
+                        <a href="#"
+                           class="btn btn-primary book-now-btn"
+                           data-package="PRE-BRIDAL PACKAGE (₹10000)"
+                           data-price="10000">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="package-card featured-card reveal-item">
+                    <div class="package-header">
+                        <h3>PRE-BRIDAL PACKAGE (₹15000)</h3>
+                    </div>
+                    <div class="package-details">
+                        <ul class="package-list">
+                            <li data-price="1500">1st Sitting before Prebridal</li>
+                            <li data-price="1850">2nd Sitting D Tan + Facial</li>
+                            <li data-price="4000">Casmara Bleach Facial</li>
+                            <li data-price="2500">Full Body Polishing</li>
+                            <li data-price="2500">Ozone full Body Bleach</li>
+                            <li data-price="2500">Full Body Wax (RICA)</li>
+                            <li data-price="1000">B Wax</li>
+                            <li data-price="750">Ozone Pedicure</li>
+                            <li data-price="750">Ozone Manicure</li>
+                            <li data-price="1000">Hair SPA</li>
+                            <li data-price="500">Hair Cut + Threading + Face wax</li>
+                        </ul>
+                    </div>
+                    <div class="package-summary">
+                        <p class="summary-line">Total Value: <span class="value">₹18850/-</span></p>
+                        <p class="summary-line discount">Less 20%: <span class="value">₹3850/-</span></p>
+                    </div>
+                    <div class="package-footer">
+                        <span class="final-price">₹15,000/-</span>
+                        <a href="#"
+                           class="btn btn-primary book-now-btn"
+                           data-package="PRE-BRIDAL PACKAGE (₹15000)"
+                           data-price="15000">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="package-card reveal-item">
+                    <div class="package-header">
+                        <h3>PRE-BRIDAL PACKAGE (₹20000)</h3>
+                    </div>
+                    <div class="package-details">
+                        <ul class="package-list">
+                            <li data-price="1850">1st Pre Sitting Bleach Facial</li>
+                            <li data-price="1850">2nd Pre Sitting Bleach Facial</li>
+                            <li data-price="1500">3rd Pre Sitting D-tan Facial</li>
+                            <li data-price="4000">Hydra Facial + Bleach</li>
+                            <li data-price="2500">Full Body Bleach</li>
+                            <li data-price="2500">Full Body Polishing</li>
+                            <li data-price="2500">Full Body Wax (RICA)</li>
+                            <li data-price="1000">B Wax</li>
+                            <li data-price="1500">Algae Manicure</li>
+                            <li data-price="1500">Algae Pedicure</li>
+                            <li data-price="1500">Hair Spa</li>
+                            <li data-price="3500">Global Hair Colour</li>
+                            <li data-price="500">Hair Cut + Threading + Face Wax</li>
+                        </ul>
+                    </div>
+                    <div class="package-summary">
+                        <p class="summary-line">Total Value: <span class="value">₹26200/-</span></p>
+                        <p class="summary-line discount">Less 23.6%: <span class="value">₹6200/-</span></p>
+                    </div>
+                    <div class="package-footer">
+                        <span class="final-price">₹20,000/-</span>
+                        <a href="#"
+                           class="btn btn-primary book-now-btn"
+                           data-package="PRE-BRIDAL PACKAGE (₹20000)"
+                           data-price="20000">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="package-card reveal-item">
+                    <div class="package-header">
+                        <h3>PRE-BRIDAL PACKAGE (₹25000)</h3>
+                    </div>
+                    <div class="package-details">
+                        <ul class="package-list">
+                            <li data-price="2000">1st Pre Sitting Bleach Facial</li>
+                            <li data-price="2000">2nd Pre Sitting Bleach Facial</li>
+                            <li data-price="1500">3rd Pre Sitting D-tan Facial</li>
+                            <li data-price="1750">4th Arms + Leg Wax (Chocolate)</li>
+                            <li data-price="1000">5th B Wax</li>
+                            <li data-price="4000">Hydra Facial + Bleach</li>
+                            <li data-price="3000">Full Body Bleach</li>
+                            <li data-price="2500">Full Body Polishing</li>
+                            <li data-price="2500">Full Body Wax (RICA)</li>
+                            <li data-price="1000">B Wax</li>
+                            <li data-price="1500">Algae Manicure</li>
+                            <li data-price="1500">Algae Pedicure</li>
+                            <li data-price="3000">2 Hair Spa (1500X2)</li>
+                            <li data-price="2000">Nail Extension</li>
+                            <li data-price="4500">Highlight Or Keratin</li>
+                            <li data-price="500">Hair cut + Threading + Face Wax</li>
+                        </ul>
+                    </div>
+                    <div class="package-summary">
+                        <p class="summary-line">Total Value: <span class="value">₹34250/-</span></p>
+                        <p class="summary-line discount">Less 27%: <span class="value">₹9250/-</span></p>
+                    </div>
+                    <div class="package-footer">
+                        <span class="final-price">₹25,000/-</span>
+                        <a href="#"
+                           class="btn btn-primary book-now-btn"
+                           data-package="PRE-BRIDAL PACKAGE (₹25000)"
+                           data-price="25000">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title reveal-item" style="margin-top: 80px;">H.D. Bridal Makeup (Single Sitting)</h2>
+
+            <div class="makeup-pricing-table reveal-item">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Makeup Brand/Type</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>MAKEUP STUDIO OR KRYOLAN HD</td><td>₹10,000/-</td></tr>
+                        <tr><td>MAC OR AIR BRUSH</td><td>₹15,000/-</td></tr>
+                        <tr><td>BOBBY BROWN</td><td>₹20,000/-</td></tr>
+                        <tr><td>NARS/ESTEE LAUDER</td><td>₹22,000/-</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="text-center" style="margin-top: 48px;">
+                <a href="#"
+                   class="btn btn-secondary btn-large book-now-btn"
+                   data-package="HD Bridal Makeup (Kryolan/Studio)"
+                   data-price="10000">BOOK BRIDAL MAKEUP CONSULTATION</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Green<br><span>Professionals</span></h2>
+                    <p>Salon & Academy</p>
+                </div>
+                <div class="footer-text">
+                    <p>© 2025 Green Professionals Salon & Academy. All rights reserved.</p>
+                    <p>Kachey Quarter, Ashok Nagar, Sonipat - 131001</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="packages.js"></script>
+</body>
+</html>

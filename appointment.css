@@ -1,314 +1,410 @@
-/* ------------------------------
-   Appointment Page Styles
------------------------------- */
+/* --- Page-specific Styles for packages.html --- */
 
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* --- GLOBAL PAGE HEADER FOR PACKAGES.HTML --- */
+.page-header-title {
+  font-size: 56px;
+  text-align: center;
+  margin-bottom: 8px;
+  color: var(--primary-color); /* Using global variable */
+  font-weight: 700; /* Ensure strong visual hierarchy */
+}
+
+@media (max-width: 768px) {
+  .page-header-title {
+      font-size: 40px;
   }
-  
-  /* Section Padding */
-  .section-padding {
-    padding: 80px 20px;
+}
+
+@media (max-width: 480px) {
+  .page-header-title {
+      font-size: 32px;
   }
-  
-  /* Appointment Section */
-  .appointment-section {
-    background: #fff;
-    color: #333;
-    font-family: "Lato", sans-serif;
+}
+
+/* --- PRICING SECTION STYLES (Packages Grid, Cards, etc.) --- */
+
+.pricing {
+  background-color: var(--background-color); /* Using global variable */
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax for better card sizing */
+  gap: 32px;
+  margin-top: 64px;
+}
+
+.package-card {
+  background-color: var(--surface-color); /* Using global variable */
+  border: 1px solid var(--border-color); /* Using global variable */
+  border-radius: var(--border-radius-large); /* Using global variable for rounded corners */
+  box-shadow: var(--shadow-light); /* Using global variable */
+  transition: all var(--transition-speed) ease; /* Using global variable */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensures rounded corners apply to children */
+}
+
+.package-card:hover {
+  box-shadow: var(--shadow-medium); /* Enhanced shadow on hover */
+  transform: translateY(-8px);
+  border-color: var(--primary-color);
+}
+
+.package-card.featured-card {
+  border: 2px solid var(--primary-color);
+  box-shadow: var(--shadow-deep); /* Stronger shadow for featured */
+  transform: translateY(-5px); /* Subtle lift for featured */
+}
+
+.package-header {
+  padding: 24px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); /* Gradient for header */
+  color: var(--text-color); /* Text color for header */
+  border-top-left-radius: var(--border-radius-large); /* Match card radius */
+  border-top-right-radius: var(--border-radius-large); /* Match card radius */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.package-header::before { /* Subtle overlay effect */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.package-header h3 {
+  color: var(--text-color); /* Ensure text is white on gradient */
+  font-size: 24px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.package-details {
+  flex-grow: 1;
+  padding: 0 16px; /* Add horizontal padding */
+}
+
+.package-list {
+  list-style: none;
+  padding: 24px 0; /* Adjusted padding */
+}
+
+.package-list li {
+  font-size: 16px;
+  color: var(--text-secondary-color); /* Using global variable */
+  margin-bottom: 12px; /* Increased spacing */
+  line-height: 1.4;
+  padding-left: 28px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color var(--transition-speed) ease;
+}
+
+.package-list li:last-child {
+  margin-bottom: 0;
+}
+
+.package-list li::before {
+  content: '\2713'; /* Checkmark icon */
+  position: absolute;
+  left: 0;
+  color: var(--success-color); /* Using global variable for success */
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1; /* Align with text */
+}
+
+.package-list li::after {
+  content: '₹' attr(data-price) '/-';
+  color: var(--text-color); /* Using global variable */
+  font-weight: 500;
+  font-size: 15px;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+.package-summary {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border-color); /* Using global variable */
+  border-bottom: 1px solid var(--border-color); /* Using global variable */
+  background-color: var(--background-color); /* Using global variable */
+  margin-top: auto; /* Pushes summary to bottom of details */
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px; /* Increased spacing */
+  color: var(--text-secondary-color); /* Using global variable */
+}
+
+.summary-line:last-child {
+  margin-bottom: 0;
+}
+
+.summary-line .value {
+  color: var(--text-color); /* Using global variable */
+  font-weight: 700;
+}
+
+.summary-line.discount {
+  color: var(--error-color); /* Using global variable for error */
+}
+
+.summary-line.discount .value {
+  color: var(--error-color); /* Using global variable */
+}
+
+.package-footer {
+  padding: 24px;
+  text-align: center;
+}
+
+.package-footer .final-price {
+  display: block;
+  font-size: 40px;
+  font-family: var(--font-family-sans); /* Consistent font */
+  font-weight: 700;
+  color: var(--primary-color); /* Using global variable */
+  margin-bottom: 16px;
+}
+
+/* --- HD Makeup Table Styles --- */
+.makeup-pricing-table {
+  margin-top: 40px;
+  overflow-x: auto;
+  border-radius: var(--border-radius-large); /* Using global variable */
+  box-shadow: var(--shadow-medium); /* Using global variable */
+  border: 1px solid var(--border-color); /* Using global variable */
+}
+
+.makeup-pricing-table table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 400px;
+  background-color: var(--surface-color); /* Using global variable */
+}
+
+.makeup-pricing-table th, .makeup-pricing-table td {
+  padding: 18px 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color); /* Using global variable */
+}
+
+.makeup-pricing-table th {
+  background-color: var(--secondary-color); /* Using global variable */
+  color: var(--text-color); /* Using global variable */
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.makeup-pricing-table tbody tr:nth-child(even) {
+  background-color: var(--background-color); /* Using global variable */
+}
+
+.makeup-pricing-table td {
+  color: var(--text-secondary-color); /* Using global variable */
+  font-size: 16px;
+}
+
+.makeup-pricing-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Media Query Adjustments */
+@media (max-width: 1200px) {
+  .package-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust for slightly larger cards */
   }
-  
-  /* Grid Layout */
-  .appointment-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    gap: 50px;
-  }
-  
-  @media (max-width: 900px) {
-    .appointment-grid {
+}
+
+@media (max-width: 768px) {
+  .package-grid {
       grid-template-columns: 1fr;
-      gap: 40px;
-    }
   }
-  
-  /* Form Container */
-  .appointment-form-container {
-    max-width: 550px;
-    margin: 0 auto;
+  .package-card {
+      margin: 0 auto; /* Center single cards */
+      max-width: 400px; /* Limit width on small screens */
   }
-  
-  .section-title-left {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #222;
-  }
-  
-  .section-description {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 25px;
-    line-height: 1.5;
-  }
-  
-  /* Appointment Form */
-  .appointment-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .appointment-form input,
-  .appointment-form select,
-  .appointment-form textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: border-color 0.2s ease;
-  }
-  
-  .appointment-form input:focus,
-  .appointment-form select:focus,
-  .appointment-form textarea:focus {
-    border-color: #0073e6;
-    outline: none;
-  }
-  
-  .appointment-form button {
-    background: #A2C4B2;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 14px 20px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .appointment-form button:hover {
-    background: #005bb5;
-  }
-  
-  /* Form Message */
-  .form-message {
-    font-size: 0.95rem;
-    color: green;
-    margin-top: 10px;
-  }
-  
-  /* ------------------------------
-     Image Grid Section
-  ------------------------------ */
-  
-  .appointment-images {
-    text-align: center;
-  }
-  
-  .appointment-images .section-title-left {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  .appointment-images .section-description {
-    color: #666;
-    margin-bottom: 25px;
-  }
-  
-  /* 2x2 Clean Grid */
-  .image-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .image-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .image-row img {
-    width: 100%;
-    max-width: 260px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  
-  .image-row img:hover {
-    transform: scale(1.03);
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .image-row {
-      flex-direction: column;
-      gap: 15px;
-    }
-  
-    .image-row img {
-      max-width: 100%;
-    }
-  
-    .section-title-left {
-      text-align: center;
-    }
-  
-    .appointment-form-container {
-      text-align: center;
-    }
-  }
-  
-  /* ------------------------------
-     Minimal Google-style Rating Div
-  ------------------------------ */
-  
-  .rating-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin: 25px auto;
-    font-size: 18px;
-    font-weight: 500;
-    color: #000;
-  }
-  
-  .rating-div img {
-    height: 26px;
-    width: auto;
-  }
-  
-  .rating-div .stars {
-    display: flex;
-    gap: 3px;
-    align-items: center;
-  }
-  
-  .rating-div .star {
-    color: #0073e6;
-    font-size: 18px;
-  }
-  
-  /* ------------------------------
-     Footer
-  ------------------------------ */
-  .footer {
-    background: #f8f8f8;
-    padding: 40px 20px;
-    text-align: center;
-    font-family: "Lato", sans-serif;
-    color: #444;
-  }
-  
-  .footer-logo h2 {
-    font-size: 1.8rem;
-    margin-bottom: 5px;
-  }
-  
-  .footer-logo span {
-    color: #666666;
-  }
-  
-  .footer p {
-    font-size: 0.95rem;
-    margin-top: 6px;
-  }
-  
-  /* ------------------------------
-     Utility Classes
-  ------------------------------ */
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #A2C4B2;
-    color: #fff;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s;
-  }
-  
-  .btn:hover {
-    background: #A2C4B2;
-  }
-  
-  /* ------------------------------
-   Image Grid Section
------------------------------- */
+}
 
-.appointment-images {
-    text-align: center;
+/* --- MODAL (POP-UP) STYLES --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
+  padding-top: 50px;
+  backdrop-filter: blur(5px); /* Subtle blur */
+  animation: fadeInOverlay 0.3s ease-out;
+}
+
+@keyframes fadeInOverlay {
+  from { background-color: rgba(0, 0, 0, 0); }
+  to { background-color: rgba(0, 0, 0, 0.7); }
+}
+
+.modal-content {
+  background-color: var(--surface-color); /* Using global variable */
+  margin: 5% auto;
+  padding: 30px;
+  border: 1px solid var(--border-color); /* Using global variable */
+  width: 90%;
+  max-width: 500px;
+  border-radius: var(--border-radius-large); /* Using global variable */
+  box-shadow: var(--shadow-deep); /* Using global variable */
+  position: relative;
+  animation: slideInFromTop 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother animation */
+}
+
+@keyframes slideInFromTop {
+  from { opacity: 0; transform: translateY(-50px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-content h2 {
+  color: var(--primary-color);
+  font-size: 28px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.close-btn {
+  color: var(--text-secondary-color);
+  float: right;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  cursor: pointer;
+  transition: color var(--transition-speed) ease;
+}
+
+.close-btn:hover, .close-btn:focus {
+  color: var(--accent-color); /* Accent color for close button */
+  text-decoration: none;
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 20px; /* Increased spacing */
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px; /* Increased spacing */
+  color: var(--text-color); /* Using global variable */
+  font-size: 16px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group select {
+  width: 100%;
+  padding: 14px; /* Increased padding */
+  border: 1px solid var(--border-color); /* Using global variable */
+  border-radius: var(--border-radius-medium); /* Using global variable */
+  font-size: 16px;
+  background-color: var(--background-color); /* Using global variable */
+  color: var(--text-color);
+  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="date"]:focus,
+.form-group select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(158, 127, 255, 0.2);
+  outline: none;
+}
+
+.form-group input[readonly] {
+  background-color: var(--background-color); /* Keep consistent dark background */
+  font-weight: 700;
+  color: var(--primary-color);
+  border-color: var(--primary-color); /* Highlight readonly field */
+  cursor: default;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+  color: var(--text-secondary-color);
+}
+
+.btn-submit {
+  width: 100%;
+  margin-top: 25px; /* Increased spacing */
+  padding: 15px 25px; /* Larger button */
+  font-size: 18px;
+  border-radius: var(--border-radius-medium);
+}
+
+.submission-success {
+  text-align: center;
+  padding: 18px; /* Increased padding */
+  margin-top: 25px; /* Increased spacing */
+  border-radius: var(--border-radius-medium); /* Using global variable */
+  background-color: rgba(16, 185, 129, 0.15); /* Success color with opacity */
+  color: var(--success-color); /* Using global variable */
+  font-weight: 600;
+  border: 1px solid rgba(16, 185, 129, 0.3); /* Success border with opacity */
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+      margin: 20px auto;
+      padding: 25px;
   }
-  
-  .image-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  .modal-content h2 {
+      font-size: 24px;
   }
-  
-  .image-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+  .close-btn {
+      font-size: 30px;
+      top: 10px;
+      right: 15px;
   }
-  
-  .image-row img {
-    width: 100%;
-    max-width: 260px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+  .form-group label {
+      font-size: 15px;
   }
-  
-  .image-row img:hover {
-    transform: scale(1.03);
+  .form-group input, .form-group select {
+      padding: 12px;
+      font-size: 15px;
   }
-  
-  /* ✅ Mobile par bhi 2x2 layout maintain karega */
-  @media (max-width: 768px) {
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      justify-items: center;
-    }
-  
-    .image-row {
-      display: contents;
-    }
-  
-    .image-row img {
-      max-width: 100%;
-      width: 90%;
-    }
-  
-    .section-title-left {
-      text-align: center;
-    }
-  
-    .appointment-form-container {
-      text-align: center;
-    }
+  .btn-submit {
+      padding: 12px 20px;
+      font-size: 16px;
   }
-  
+}
